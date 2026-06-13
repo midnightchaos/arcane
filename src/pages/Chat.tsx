@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { chatService } from '@/services/chatService';
 import { Message, ChatSession } from '@/types';
-import { Send, Loader2, Sparkles, Settings, Trash2, AlertTriangle } from 'lucide-react';
+import { Send, Loader2, Sparkles, Trash2, AlertTriangle } from 'lucide-react';
 
 const AGENT_CAPABILITIES: Record<string, string> = {
   reasoner: "Advanced logic, multi-step deduction, and complex problem-solving.",

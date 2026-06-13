@@ -171,7 +171,7 @@ async def update_workflow(
         )
     
     # Update fields
-    update_data = workflow_data.model_dump(exclude_unset=True)
+    update_data = workflow_data.model_dump(exclude_unset=True, by_alias=True)
     for field, value in update_data.items():
         setattr(workflow, field, value)
     

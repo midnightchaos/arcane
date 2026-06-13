@@ -443,29 +443,29 @@ async def run_command(
                 error=f"Command '{base_cmd}' is not allowed for security reasons"
             )
         
-            try:
-                def run_shell():
-                    return subprocess.run(
-                        request.command,
-                        cwd=temp_dir,
-                        shell=True,
-                        capture_output=True,
-                        text=True,
-                        timeout=30
-                    )
-                
-                result = await asyncio.to_thread(run_shell)
-                
-                return ExecutionResult(
-                    success=result.returncode == 0,
-                    output=result.stdout,
-                    error=result.stderr if result.returncode != 0 else None
+        try:
+            def run_shell():
+                return subprocess.run(
+                    request.command,
+                    shell=True,
+                    capture_output=True,
+                    text=True,
+                    timeout=30
                 )
-            except subprocess.TimeoutExpired:
-                return ExecutionResult(
-                    success=False,
-                    error="Command timed out (30 seconds)"
-                )
+            
+            result = await asyncio.to_thread(run_shell)
+            
+            return ExecutionResult(
+                success=result.returncode == 0,
+                output=result.stdout,
+                error=result.stderr if result.returncode != 0 else None
+            )
+        except subprocess.TimeoutExpired:
+            return ExecutionResult(
+                success=False,
+                error="Command timed out (30 seconds)"
+            )
+
     
     except Exception as e:
         return ExecutionResult(
