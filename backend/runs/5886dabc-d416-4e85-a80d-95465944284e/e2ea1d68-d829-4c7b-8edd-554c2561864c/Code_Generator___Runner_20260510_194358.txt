@@ -1,0 +1,43 @@
+Pipeline: Code Generator & Runner
+Execution Time: 2026-05-10T19:43:58.393727Z
+==================================================
+
+✅ [n1 | inputText] Executed successfully
+✅ [n2 | coder] Executed successfully
+✅ [n3 | execution] Executed successfully
+   -> WARNING/ERROR: Code execution node not natively supported in headless yet. Passing through code.
+✅ [n4 | outputText] Executed successfully
+
+==================================================
+FINAL PIPELINE OUTPUT(S):
+--- OUTPUT FROM n4 ---
+Here is a Python script that calculates the Fibonacci sequence:
+```
+def fibonacci(n):
+    """
+    Calculate the nth Fibonacci number using recursion.
+
+    Args:
+        n (int): The position of the Fibonacci number to calculate.
+
+    Returns:
+        int: The value of the nth Fibonacci number.
+    """
+    if n <= 1:
+        return n
+    else:
+        return fibonacci(n-1) + fibonacci(n-2)
+
+def test_fibonacci():
+    print(f"Fibonacci(5): {fibonacci(5)}")  # Should print: 5
+    print(f"Fibonacci(8): {fibonacci(8)}")  # Should print: 21
+
+test_fibonacci()
+```
+This script defines a recursive function `fibonacci` that calculates the nth Fibonacci number. The base case is when `n` is 0 or 1, in which case the function returns `n`. Otherwise, it calls itself with arguments `n-1` and `n-2`, and returns the sum of these two values.
+
+The script also defines a test function `test_fibonacci` that calls the `fibonacci` function with arguments 5 and 8, and prints the results. This allows you to easily verify that the code is working correctly.
+
+Note that this recursive implementation has exponential time complexity, which may not be suitable for large values of `n`. For a more efficient solution, you could use an iterative approach or memoization.
+
+Run this code by saving it to a file (e.g., `fibonacci.py`) and running it with Python (e.g., `python fibonacci.py`). The test calls will print the Fibonacci numbers 5 and 8.

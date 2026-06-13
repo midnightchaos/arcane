@@ -1,0 +1,44 @@
+Pipeline: Code Generator & Runner
+Execution Time: 2026-05-10T19:45:58.449336Z
+==================================================
+
+✅ [n1 | inputText] Executed successfully
+✅ [n2 | coder] Executed successfully
+✅ [n3 | execution] Executed successfully
+   -> WARNING/ERROR: Code execution node not natively supported in headless yet. Passing through code.
+✅ [n4 | outputText] Executed successfully
+
+==================================================
+FINAL PIPELINE OUTPUT(S):
+--- OUTPUT FROM n4 ---
+Here is a Python script that calculates the Fibonacci sequence:
+```
+def fibonacci(n):
+    """
+    Calculate the nth Fibonacci number using memoization for efficiency.
+    
+    Args:
+        n (int): The index of the Fibonacci number to calculate.
+        
+    Returns:
+        int: The nth Fibonacci number.
+    """
+    memo = {0: 0, 1: 1}
+    for i in range(2, n+1):
+        memo[i] = memo[i-1] + memo[i-2]
+    return memo[n]
+
+def main():
+    print("Fibonacci sequence:")
+    for i in range(10):  # Calculate the first 10 Fibonacci numbers
+        print(f"({i}) {fibonacci(i)}")
+
+if __name__ == "__main__":
+    main()
+
+# Test call:
+print(fibonacci(8))  # Should output: 21
+```
+This script uses memoization to efficiently calculate the nth Fibonacci number. The `fibonacci` function takes an integer `n` as input and returns the corresponding Fibonacci number. The `main` function demonstrates how to use this function by calculating the first 10 Fibonacci numbers.
+
+The test call at the bottom ensures that the code is working correctly, as it should output the correct Fibonacci number for the given index (in this case, `fibonacci(8)` should return `21`).

@@ -1,0 +1,42 @@
+Pipeline: Code Generator & Runner
+Execution Time: 2026-05-10T19:33:28.263931Z
+==================================================
+
+✅ [n1 | inputText] Executed successfully
+✅ [n2 | coder] Executed successfully
+✅ [n3 | execution] Executed successfully
+   -> WARNING/ERROR: Code execution node not natively supported in headless yet. Passing through code.
+✅ [n4 | outputText] Executed successfully
+
+==================================================
+FINAL PIPELINE OUTPUT(S):
+--- OUTPUT FROM n4 ---
+Here is a Python script to calculate the Fibonacci sequence:
+```
+def fibonacci(n):
+    """
+    Calculate the nth Fibonacci number.
+
+    Args:
+        n (int): The index of the Fibonacci number to calculate.
+
+    Returns:
+        int: The nth Fibonacci number.
+    """
+    if n <= 1:
+        return n
+    a, b = 0, 1
+    for i in range(2, n + 1):
+        a, b = b, a + b
+    return b
+
+# Test call
+print(fibonacci(10))  # Should print the 10th Fibonacci number
+```
+This code defines a recursive function `fibonacci` that calculates the nth Fibonacci number. The function uses an iterative approach to calculate the sequence up to the desired index.
+
+The test call at the bottom uses the exact function name and variable names defined in the code, as required.
+
+You can save this script to a file (e.g., `fibonacci.py`) and run it using Python (e.g., `python fibonacci.py`) to see the output.
+
+Note: This implementation is not the most efficient way to calculate Fibonacci numbers for large values of n. For larger values, you may want to consider using an iterative approach or memoization techniques.

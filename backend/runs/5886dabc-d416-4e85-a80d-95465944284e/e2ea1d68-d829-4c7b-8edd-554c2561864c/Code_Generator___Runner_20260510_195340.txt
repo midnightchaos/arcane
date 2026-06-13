@@ -1,0 +1,44 @@
+Pipeline: Code Generator & Runner
+Execution Time: 2026-05-10T19:53:40.616006Z
+==================================================
+
+✅ [n1 | inputText] Executed successfully
+✅ [n2 | coder] Executed successfully
+✅ [n3 | execution] Executed successfully
+   -> WARNING/ERROR: Code execution node not natively supported in headless yet. Passing through code.
+✅ [n4 | outputText] Executed successfully
+
+==================================================
+FINAL PIPELINE OUTPUT(S):
+--- OUTPUT FROM n4 ---
+Here is a Python script that calculates the Fibonacci sequence:
+```python
+def fibonacci(n):
+    """
+    Calculate the nth Fibonacci number.
+
+    :param n: The position of the Fibonacci number to calculate (0-indexed)
+    :return: The nth Fibonacci number
+    """
+    if n <= 1:
+        return n
+
+    a, b = 0, 1
+    for i in range(2, n + 1):
+        a, b = b, a + b
+
+    return b
+
+
+# Test the function
+print(fibonacci(10))  # Output: 55
+```
+Here's an explanation of the code:
+
+* The `fibonacci` function takes an integer `n` as input and returns the `n`-th Fibonacci number.
+* If `n` is 0 or 1, the function simply returns `n`, since the first two Fibonacci numbers are 0 and 1.
+* Otherwise, the function uses a loop to calculate the `n`-th Fibonacci number. The loop starts from the third Fibonacci number (since we already know the first two) and iterates up to `n`.
+* In each iteration, the function updates the values of `a` and `b` using the recurrence relation `a, b = b, a + b`. This is because the next Fibonacci number is the sum of the previous two.
+* The final value of `b` is returned as the result.
+
+The test call at the bottom uses the exact function name `fibonacci` and variable name `n`, as required.

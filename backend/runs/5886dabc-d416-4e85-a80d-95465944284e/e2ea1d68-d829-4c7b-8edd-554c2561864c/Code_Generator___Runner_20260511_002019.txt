@@ -1,0 +1,46 @@
+Pipeline: Code Generator & Runner
+Execution Time: 2026-05-11T00:20:19.396981Z
+==================================================
+
+✅ [n1 | inputText] Executed successfully
+✅ [n2 | coder] Executed successfully
+✅ [n3 | execution] Executed successfully
+   -> WARNING/ERROR: Code execution node not natively supported in headless yet. Passing through code.
+✅ [n4 | outputText] Executed successfully
+
+==================================================
+FINAL PIPELINE OUTPUT(S):
+--- OUTPUT FROM n4 ---
+Here is a Python script that calculates the Fibonacci sequence:
+```
+def fibonacci(n):
+    """
+    Calculate the nth Fibonacci number.
+
+    Time complexity: O(2^n)
+    Space complexity: O(n)
+
+    :param n: The position of the Fibonacci number to calculate (1-indexed)
+    :return: The nth Fibonacci number
+    """
+    if n <= 0:
+        raise ValueError("n must be a positive integer")
+    elif n == 1:
+        return 0
+    elif n == 2:
+        return 1
+
+    a, b = 0, 1
+    for i in range(2, n):
+        a, b = b, a + b
+
+    return b
+
+# Test call
+print(fibonacci(10))  # Should print the 10th Fibonacci number: 55
+```
+This script defines a recursive function `fibonacci` that calculates the nth Fibonacci number. The time complexity is O(2^n) and space complexity is O(n), as the function stores the previous two Fibonacci numbers to calculate the next one.
+
+The test call at the bottom prints the 10th Fibonacci number, which should be 55.
+
+Note: I've included docstrings for each function to provide documentation on what the function does, its time and space complexity, and any input/output parameters. This is a best practice in Python programming.

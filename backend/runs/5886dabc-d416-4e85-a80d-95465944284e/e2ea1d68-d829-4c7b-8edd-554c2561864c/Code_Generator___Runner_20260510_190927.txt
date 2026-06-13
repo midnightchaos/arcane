@@ -1,0 +1,49 @@
+Pipeline: Code Generator & Runner
+Execution Time: 2026-05-10T19:09:27.841665Z
+==================================================
+
+✅ [n1 | inputText] Executed successfully
+✅ [n2 | coder] Executed successfully
+✅ [n3 | execution] Executed successfully
+   -> WARNING/ERROR: Code execution node not natively supported in headless yet. Passing through code.
+✅ [n4 | outputText] Executed successfully
+
+==================================================
+FINAL PIPELINE OUTPUT(S):
+--- OUTPUT FROM n4 ---
+Here is a Python script that calculates the Fibonacci sequence:
+```python
+def fibonacci(n):
+    """
+    Calculate the nth Fibonacci number.
+
+    Args:
+        n (int): The position of the Fibonacci number to calculate.
+
+    Returns:
+        int: The nth Fibonacci number.
+    """
+    if n <= 1:
+        return n
+
+    a, b = 0, 1
+    for _ in range(2, n + 1):
+        a, b = b, a + b
+
+    return b
+
+
+# Test call
+print(fibonacci(10))  # Output: 55
+```
+Let me explain the code:
+
+* The `fibonacci` function takes an integer `n` as input and returns the `n`-th Fibonacci number.
+* If `n` is less than or equal to 1, we return `n`, since the first two Fibonacci numbers are 0 and 1.
+* We initialize two variables `a` and `b` to 0 and 1, respectively, which will store the previous two Fibonacci numbers in the sequence.
+* We use a loop that runs from 2 to `n` (inclusive). In each iteration, we update `a` and `b` by setting `a` to the previous value of `b`, and `b` to the sum of the previous values of `a` and `b`.
+* Finally, we return the `n`-th Fibonacci number, which is stored in `b`.
+
+The test call at the bottom uses the `print` statement to calculate the 10th Fibonacci number and print it. The output should be 55.
+
+I hope this meets your requirements!

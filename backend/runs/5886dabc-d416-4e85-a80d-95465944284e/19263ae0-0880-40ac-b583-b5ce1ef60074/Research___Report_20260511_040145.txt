@@ -1,0 +1,31 @@
+Pipeline: Research & Report
+Execution Time: 2026-05-11T04:01:45.519899Z
+==================================================
+
+✅ [n1 | inputText] Executed successfully
+✅ [n2 | reasoner] Executed successfully
+✅ [n3 | analyst] Executed successfully
+✅ [n4 | planner] Executed successfully
+✅ [n5 | outputText] Executed successfully
+
+==================================================
+FINAL PIPELINE OUTPUT(S):
+--- OUTPUT FROM n5 ---
+Let's get started!
+
+As a strategic planning agent, I will guide you through the process of creating a roadmap. To begin, please provide the following information:
+
+1. **Organizational Goals**:
+	* What are your organization's top three goals for the next 12 months?
+	* Are these goals specific, measurable, achievable, relevant, and time-bound (SMART)?
+2. **Current Situation**:
+	* What are the current strengths, weaknesses, opportunities, and threats (SWOT analysis) facing your organization?
+3. **Key Performance Indicators (KPIs)**:
+	* Which KPIs will you use to measure progress towards these goals? Are there any specific metrics or targets you'd like to achieve?
+4. **Resources and Constraints**:
+	* What resources do you have available to achieve these goals (e.g., budget, personnel, technology)?
+	* Are there any constraints that may impact your ability to execute on these goals?
+
+Once I receive this information, I'll help you break down the goals into clear, actionable steps, identify dependencies and priorities, create a structured execution plan, and consider resources and constraints.
+
+Please provide the requested information, and we can begin crafting a roadmap for success!

@@ -1,0 +1,57 @@
+Pipeline: Code Generator & Runner
+Execution Time: 2026-05-10T19:11:57.879384Z
+==================================================
+
+✅ [n1 | inputText] Executed successfully
+✅ [n2 | coder] Executed successfully
+✅ [n3 | execution] Executed successfully
+   -> WARNING/ERROR: Code execution node not natively supported in headless yet. Passing through code.
+✅ [n4 | outputText] Executed successfully
+
+==================================================
+FINAL PIPELINE OUTPUT(S):
+--- OUTPUT FROM n4 ---
+Here is a Python script that calculates the Fibonacci sequence using a recursive function and a loop-based approach:
+
+```python
+def fibonacci_recursive(n):
+    """
+    Calculate Fibonacci number recursively.
+    
+    Args:
+    n (int): The position of the Fibonacci number to calculate.
+    
+    Returns:
+    int: The Fibonacci number at position n.
+    """
+    if n <= 1:
+        return n
+    return fibonacci_recursive(n-1) + fibonacci_recursive(n-2)
+
+
+def fibonacci_loop(n):
+    """
+    Calculate Fibonacci number using a loop.
+    
+    Args:
+    n (int): The position of the Fibonacci number to calculate.
+    
+    Returns:
+    int: The Fibonacci number at position n.
+    """
+    if n <= 1:
+        return n
+    a, b = 0, 1
+    for _ in range(2, n+1):
+        a, b = b, a+b
+    return b
+
+
+# Test the functions
+print("Fibonacci number at position 10 using recursive function:", fibonacci_recursive(10))
+print("Fibonacci number at position 10 using loop-based function:", fibonacci_loop(10))
+```
+
+This script defines two functions: `fibonacci_recursive` and `fibonacci_loop`. The first function calculates the Fibonacci sequence recursively, while the second function uses a loop to calculate the sequence.
+
+The test call at the bottom of the script demonstrates how to use these functions by calculating the Fibonacci number at position 10 using both approaches.

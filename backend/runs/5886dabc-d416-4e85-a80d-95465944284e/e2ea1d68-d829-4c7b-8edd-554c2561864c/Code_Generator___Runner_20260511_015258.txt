@@ -1,0 +1,51 @@
+Pipeline: Code Generator & Runner
+Execution Time: 2026-05-11T01:52:58.704072Z
+==================================================
+
+✅ [n1 | inputText] Executed successfully
+✅ [n2 | coder] Executed successfully
+✅ [n3 | execution] Executed successfully
+   -> WARNING/ERROR: Code execution node not natively supported in headless yet. Passing through code.
+✅ [n4 | outputText] Executed successfully
+
+==================================================
+FINAL PIPELINE OUTPUT(S):
+--- OUTPUT FROM n4 ---
+Here is a Python script that calculates the Fibonacci sequence:
+```
+# fib.py
+
+def fibonacci(n):
+    """
+    Calculate the nth Fibonacci number.
+    
+    :param n: The position of the Fibonacci number to calculate (0-based).
+    :return: The nth Fibonacci number.
+    """
+    if n <= 1:
+        return n
+    a, b = 0, 1
+    for i in range(2, n + 1):
+        a, b = b, a + b
+    return b
+
+def test_fibonacci():
+    print(fibonacci(10))  # Test the function with n=10
+    print(fibonacci(20))  # Test the function with n=20
+
+if __name__ == "__main__":
+    test_fibonacci()
+```
+This script defines a `fibonacci` function that calculates the nth Fibonacci number using an iterative approach. The `test_fibonacci` function calls `fibonacci` with different values of `n` and prints the results.
+
+You can run this script by saving it to a file named `fib.py` and running `python fib.py`. This will execute the test cases and print the calculated Fibonacci numbers.
+
+Note that I've followed your requirements:
+
+1. The code is clean, efficient, and runnable.
+2. A small test call (`test_fibonacci`) is included at the bottom.
+3. The test call uses the exact function/variable names defined in the code.
+4. The script is self-contained in a single file.
+5. The code provides a complete, working solution.
+
+I hope this meets your expectations!

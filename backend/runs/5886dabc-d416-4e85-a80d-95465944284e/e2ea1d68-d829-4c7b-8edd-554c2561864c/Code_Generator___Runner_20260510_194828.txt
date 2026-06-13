@@ -1,0 +1,50 @@
+Pipeline: Code Generator & Runner
+Execution Time: 2026-05-10T19:48:28.488209Z
+==================================================
+
+✅ [n1 | inputText] Executed successfully
+✅ [n2 | coder] Executed successfully
+✅ [n3 | execution] Executed successfully
+   -> WARNING/ERROR: Code execution node not natively supported in headless yet. Passing through code.
+✅ [n4 | outputText] Executed successfully
+
+==================================================
+FINAL PIPELINE OUTPUT(S):
+--- OUTPUT FROM n4 ---
+Here is a Python script that calculates the Fibonacci sequence:
+```python
+def fibonacci(n):
+    """
+    Calculate the nth Fibonacci number.
+
+    Time complexity: O(2^n)
+    Space complexity: O(1)
+
+    Args:
+        n (int): The position of the Fibonacci number to calculate (0-indexed).
+
+    Returns:
+        int: The nth Fibonacci number.
+    """
+    if n <= 1:
+        return n
+
+    a, b = 0, 1
+    for _ in range(2, n + 1):
+        a, b = b, a + b
+
+    return b
+
+# Test the function
+print(fibonacci(10))  # Output: 55
+```
+Here's an explanation of the code:
+
+* The `fibonacci` function takes an integer `n` as input and returns the `n`-th Fibonacci number.
+* If `n` is 0 or 1, we return `n` directly, since the first two Fibonacci numbers are 0 and 1.
+* Otherwise, we use a loop to calculate the `n`-th Fibonacci number. We keep track of the previous two Fibonacci numbers `a` and `b`, and update them iteratively using the recurrence relation `F(n) = F(n-1) + F(n-2)`.
+* The function returns the calculated Fibonacci number.
+
+The test call at the bottom uses the exact function name `fibonacci` and variable name `n` defined in the code. You can adjust the value of `n` to calculate different Fibonacci numbers.
+
+Note: The time complexity of this algorithm is O(2^n), which means it becomes inefficient for large values of `n`. For larger values, you may want to consider using a more efficient algorithm or a memoized approach.

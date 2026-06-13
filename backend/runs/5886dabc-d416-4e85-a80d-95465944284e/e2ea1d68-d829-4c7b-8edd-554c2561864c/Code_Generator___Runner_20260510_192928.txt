@@ -1,0 +1,46 @@
+Pipeline: Code Generator & Runner
+Execution Time: 2026-05-10T19:29:28.208616Z
+==================================================
+
+✅ [n1 | inputText] Executed successfully
+✅ [n2 | coder] Executed successfully
+✅ [n3 | execution] Executed successfully
+   -> WARNING/ERROR: Code execution node not natively supported in headless yet. Passing through code.
+✅ [n4 | outputText] Executed successfully
+
+==================================================
+FINAL PIPELINE OUTPUT(S):
+--- OUTPUT FROM n4 ---
+Here is a Python script that calculates the Fibonacci sequence:
+```
+def fibonacci(n):
+    """
+    Calculate the nth Fibonacci number using dynamic programming.
+
+    Args:
+        n (int): The position of the Fibonacci number to calculate (0-indexed)
+
+    Returns:
+        int: The nth Fibonacci number
+    """
+    if n <= 1:
+        return n
+
+    fib_sequence = [0, 1]
+    for i in range(2, n+1):
+        fib_sequence.append(fib_sequence[i-1] + fib_sequence[i-2])
+
+    return fib_sequence[n]
+
+# Test call
+print(fibonacci(10))  # Should print the 10th Fibonacci number
+```
+This script uses dynamic programming to calculate the nth Fibonacci number. The `fibonacci` function takes an integer `n` as input and returns the corresponding Fibonacci number.
+
+The function first handles the base cases where `n` is 0 or 1, in which case it simply returns `n`. For larger values of `n`, it creates a list `fib_sequence` to store the Fibonacci sequence up to the `n`-th position. It then uses a loop to calculate each subsequent Fibonacci number by adding the previous two numbers in the sequence.
+
+Finally, the function returns the `n`-th Fibonacci number from the `fib_sequence`.
+
+The test call at the bottom prints the 10th Fibonacci number using the `fibonacci` function. You can modify this value to test different positions in the Fibonacci sequence.
+
+Note: I've double-checked that the test call uses the exact function and variable names defined in the code, as per your request!

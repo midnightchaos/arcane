@@ -1,0 +1,48 @@
+Pipeline: Code Generator & Runner
+Execution Time: 2026-05-10T19:06:27.773859Z
+==================================================
+
+✅ [n1 | inputText] Executed successfully
+✅ [n2 | coder] Executed successfully
+✅ [n3 | execution] Executed successfully
+   -> WARNING/ERROR: Code execution node not natively supported in headless yet. Passing through code.
+✅ [n4 | outputText] Executed successfully
+
+==================================================
+FINAL PIPELINE OUTPUT(S):
+--- OUTPUT FROM n4 ---
+Here is a Python script that calculates the Fibonacci sequence using recursion and memoization:
+```python
+def fibonacci(n, memo={}):
+    """
+    Calculate the nth Fibonacci number using recursion and memoization.
+    
+    Args:
+        n (int): The position of the Fibonacci number to calculate.
+        memo (dict): A dictionary to store previously calculated values.
+
+    Returns:
+        int: The nth Fibonacci number.
+    """
+    if n <= 1:
+        return n
+    elif n in memo:
+        return memo[n]
+    else:
+        result = fibonacci(n-1, memo) + fibonacci(n-2, memo)
+        memo[n] = result
+        return result
+
+def main():
+    print(fibonacci(10))  # Test call: calculate the 10th Fibonacci number.
+
+if __name__ == "__main__":
+    main()
+```
+This code uses a recursive function `fibonacci` to calculate the nth Fibonacci number. The function takes two arguments: `n`, the position of the Fibonacci number to calculate, and `memo`, a dictionary to store previously calculated values using memoization.
+
+The base case is when `n` is 0 or 1, in which case the function returns `n`. If `n` is already in the `memo` dictionary, the function returns the cached value. Otherwise, the function calculates the result by recursively calling itself with `n-1` and `n-2`, adds the results together, and stores the result in the `memo` dictionary.
+
+The `main` function calls `fibonacci` with `n=10` as a test case, printing the result to the console.
+
+Note that this code is efficient because it uses memoization to avoid redundant calculations. The time complexity of this algorithm is O(n), making it suitable for large values of `n`.
