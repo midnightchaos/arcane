@@ -2,13 +2,19 @@ import asyncio
 import pytest
 from typing import AsyncGenerator
 import os
+import sys
+
+# ── Must happen before ANY app import so pydantic Settings() reads it ──
+os.environ.setdefault("SECRET_KEY", "test-secret-key-for-pytest-runs-12345")
+
+# Force reload of config if already cached (edge-case: parallel collection)
+for mod in list(sys.modules.keys()):
+    if mod.startswith("app.") or mod == "main":
+        del sys.modules[mod]
+
+
 from sqlalchemy.ext.asyncio import create_async_engine, AsyncSession, async_sessionmaker
 from httpx import AsyncClient, ASGITransport
-
-# Set dummy environment variable before imports
-os.environ["SECRET_KEY"] = "test-secret-key-for-pytest-runs-12345"
-
-
 from main import app
 from app.db.session import Base, get_db
 
